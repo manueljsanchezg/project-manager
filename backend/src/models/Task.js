@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize"
 import { sequelize } from "../database/database.js"
 
-// model of task
+// Modelo de Tarea
 export const Task = sequelize.define('tasks', {
     id: {
         type: DataTypes.INTEGER,

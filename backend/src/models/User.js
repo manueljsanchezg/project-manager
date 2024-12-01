@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize"
 import { sequelize } from "../database/database.js"
 import { Project } from "./Project.js"
 
-// model of user
+// Modelo de Usuario
 export const User = sequelize.define('users', {
     id: {
         type: DataTypes.INTEGER,

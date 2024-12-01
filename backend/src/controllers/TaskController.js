@@ -1,5 +1,4 @@
 import { Task } from "../models/Task.js"
-import { Project } from "../models/Project.js"
 
 // Controlador de Tareas
 
@@ -26,6 +25,25 @@ export const fetchTaskById = async (req, res) => {
         res.status(200).json(task)
     } catch (error) {
         res.status(500).json({ message: "Error fetching task by ID", error: error.message })
+    }
+}
+
+// Crear una tarea
+export const createTask = async (req, res) => {
+    try {
+        const { name, description, priority, completed, projectId } = req.body
+
+        const newTask = await Task.create({
+            name,
+            description,
+            priority,
+            completed,
+            projectId
+        })
+
+        res.status(201).json(newTask)
+    } catch (error) {
+        res.status(500).json({ message: "Error creating new project", error: error.message })
     }
 }
 
